@@ -25,23 +25,23 @@ class ViewController: UIViewController {
     @IBAction func answerClicked(sender: UIButton) {
         if(sender == correctAnswerButton)
         {
-            print("richtig")
+//            print("richtig")
             currentQuestion = currentQuestion + 1
             
             if(currentQuestion == questions.count)
             {
-                print("you win")
+//                print("you win")
                 performSegueWithIdentifier("YouWinSegue", sender: nil)
             }
             else
             {
-                print("richtig - naechste Frage")
+//                print("richtig - naechste Frage")
                 showQuestion(questions[currentQuestion])
             }
         }
         else
         {
-            print("falsch")
+//            print("falsch")
             performSegueWithIdentifier("YouLoseSegue", sender: nil)
         }
     }
