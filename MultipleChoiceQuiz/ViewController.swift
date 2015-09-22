@@ -12,6 +12,10 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var questionLabel: UILabel!
     
+    @IBOutlet weak var gewinnLabel: UILabel!
+    
+    @IBOutlet weak var safeWinLabel: UILabel!
+    @IBOutlet weak var restzeitLabel: UILabel!
     @IBOutlet weak var answerButton1: UIButton!
     @IBOutlet weak var answerButton2: UIButton!
     @IBOutlet weak var answerButton3: UIButton!
@@ -21,8 +25,26 @@ class ViewController: UIViewController {
     
     var questions = [QuizQuestion]()
     var currentQuestion = 0
+    var gewinn = [
+        50, 100, 200, 300, 500,
+        1000, 2000, 4000, 8000, 16000,
+        32000, 64000, 128000, 250000, 500000, 1000000
+    ]
+    var currentSafeWin = 0
+    var safePoint = [
+        true, false, false, false, true,
+        false, false, false, false, true,
+        false, false, false, false, false, true
+    ]
+    
+    var hasWon = false
+    var restZeit : Int = 0
+    
+    var timer : NSTimer? = nil
     
     @IBAction func answerClicked(sender: UIButton) {
+        timer?.invalidate()
+        
         if(sender == correctAnswerButton)
         {
 //            print("richtig")
@@ -31,18 +53,34 @@ class ViewController: UIViewController {
             if(currentQuestion == questions.count)
             {
 //                print("you win")
-                performSegueWithIdentifier("YouWinSegue", sender: nil)
+                hasWon = true
+                performSegueWithIdentifier("YouWinLoseSegue", sender: nil)
             }
             else
             {
 //                print("richtig - naechste Frage")
+
                 showQuestion(questions[currentQuestion])
             }
         }
         else
         {
 //            print("falsch")
-            performSegueWithIdentifier("YouLoseSegue", sender: nil)
+            hasWon = false
+            performSegueWithIdentifier("YouWinLoseSegue", sender: nil)
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let winloseVC = segue.destinationViewController as! WinLoseViewController
+        winloseVC.hasWon = hasWon
+        if(hasWon)
+        {
+            winloseVC.score = gewinn[currentQuestion]
+        }
+        else
+        {
+            winloseVC.score = currentSafeWin
         }
     }
     
@@ -83,6 +121,38 @@ class ViewController: UIViewController {
         default:
             break
         }
+        
+        // Gewinnlabel setzen
+        gewinnLabel.text = "Ihr Gewinn bisher: \(gewinn[currentQuestion])"
+        
+        if(safePoint[currentQuestion])
+        {
+            currentSafeWin = gewinn[currentQuestion]
+        }
+        safeWinLabel.text = "Sicherer Gewinn: \(currentSafeWin)"
+        
+        restZeit = 10
+        restzeitLabel.text = "\(restZeit)"
+        
+        timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("countdown"), userInfo: nil, repeats: true)
+    }
+    
+    func countdown()
+    {
+        restZeit--
+        print(restZeit)
+        if(restZeit == 0)
+        {
+            timer?.invalidate()
+            timer = nil
+            
+            hasWon = false
+            performSegueWithIdentifier("YouWinLoseSegue", sender: nil)
+        }
+        else
+        {
+            restzeitLabel.text = "\(restZeit)"
+        }
     }
     
     override func viewDidLoad() {
@@ -95,14 +165,68 @@ class ViewController: UIViewController {
                 wrongAnswers: ["3", "4", "5"]
             ),
             QuizQuestion(
+                question: "What is 1 + 1",
+                correctAnswer : "2",
+                wrongAnswers: ["3", "4", "5"]
+            ),            QuizQuestion(
+                question: "What is 1 + 1",
+                correctAnswer : "2",
+                wrongAnswers: ["3", "4", "5"]
+            ),            QuizQuestion(
+                question: "What is 1 + 1",
+                correctAnswer : "2",
+                wrongAnswers: ["3", "4", "5"]
+            ),            QuizQuestion(
+                question: "What is 1 + 1",
+                correctAnswer : "2",
+                wrongAnswers: ["3", "4", "5"]
+            ),            QuizQuestion(
+                question: "What is 1 + 1",
+                correctAnswer : "2",
+                wrongAnswers: ["3", "4", "5"]
+            ),            QuizQuestion(
+                question: "What is 1 + 1",
+                correctAnswer : "2",
+                wrongAnswers: ["3", "4", "5"]
+            ),            QuizQuestion(
+                question: "What is 1 + 1",
+                correctAnswer : "2",
+                wrongAnswers: ["3", "4", "5"]
+            ),            QuizQuestion(
+                question: "What is 1 + 1",
+                correctAnswer : "2",
+                wrongAnswers: ["3", "4", "5"]
+            ),            QuizQuestion(
+                question: "What is 1 + 1",
+                correctAnswer : "2",
+                wrongAnswers: ["3", "4", "5"]
+            ),            QuizQuestion(
+                question: "What is 1 + 1",
+                correctAnswer : "2",
+                wrongAnswers: ["3", "4", "5"]
+            ),            QuizQuestion(
+                question: "What is 1 + 1",
+                correctAnswer : "2",
+                wrongAnswers: ["3", "4", "5"]
+            ),            QuizQuestion(
+                question: "What is 1 + 1",
+                correctAnswer : "2",
+                wrongAnswers: ["3", "4", "5"]
+            ),            QuizQuestion(
+                question: "What is 1 + 1",
+                correctAnswer : "2",
+                wrongAnswers: ["3", "4", "5"]
+            ),            QuizQuestion(
                 question: "Was ist der Schmelzpunkt von Wasser",
                 correctAnswer: "273.4 Grad Kelvin",
                 wrongAnswers: ["373.4 Grad Kelvin", "0 Grad Fahrenheit", "100 Grad Celsius"]
             )
         ]
         showQuestion(questions[0])
-    }
+        
 
+    }
+   
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

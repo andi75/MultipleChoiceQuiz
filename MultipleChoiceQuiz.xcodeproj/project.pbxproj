@@ -15,6 +15,7 @@
 		E19704391BB026AB006CB1E0 /* MultipleChoiceQuizTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19704381BB026AB006CB1E0 /* MultipleChoiceQuizTests.swift */; };
 		E19704441BB026AB006CB1E0 /* MultipleChoiceQuizUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19704431BB026AB006CB1E0 /* MultipleChoiceQuizUITests.swift */; };
 		E19704521BB02F6E006CB1E0 /* QuizQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19704511BB02F6E006CB1E0 /* QuizQuestion.swift */; settings = {ASSET_TAGS = (); }; };
+		E1C0E8751BB1736700ED04F3 /* WinLoseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C0E8741BB1736700ED04F3 /* WinLoseViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		E19704431BB026AB006CB1E0 /* MultipleChoiceQuizUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleChoiceQuizUITests.swift; sourceTree = "<group>"; };
 		E19704451BB026AB006CB1E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E19704511BB02F6E006CB1E0 /* QuizQuestion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizQuestion.swift; sourceTree = "<group>"; };
+		E1C0E8741BB1736700ED04F3 /* WinLoseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WinLoseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			children = (
 				E19704231BB026AB006CB1E0 /* AppDelegate.swift */,
 				E19704251BB026AB006CB1E0 /* ViewController.swift */,
+				E1C0E8741BB1736700ED04F3 /* WinLoseViewController.swift */,
 				E19704271BB026AB006CB1E0 /* Main.storyboard */,
 				E19704511BB02F6E006CB1E0 /* QuizQuestion.swift */,
 				E197042A1BB026AB006CB1E0 /* Assets.xcassets */,
@@ -260,6 +263,7 @@
 			files = (
 				E19704521BB02F6E006CB1E0 /* QuizQuestion.swift in Sources */,
 				E19704261BB026AB006CB1E0 /* ViewController.swift in Sources */,
+				E1C0E8751BB1736700ED04F3 /* WinLoseViewController.swift in Sources */,
 				E19704241BB026AB006CB1E0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -487,6 +491,7 @@
 				E197044A1BB026AB006CB1E0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E197044B1BB026AB006CB1E0 /* Build configuration list for PBXNativeTarget "MultipleChoiceQuizTests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +500,7 @@
 				E197044D1BB026AB006CB1E0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E197044E1BB026AB006CB1E0 /* Build configuration list for PBXNativeTarget "MultipleChoiceQuizUITests" */ = {
 			isa = XCConfigurationList;
@@ -503,6 +509,7 @@
 				E19704501BB026AB006CB1E0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

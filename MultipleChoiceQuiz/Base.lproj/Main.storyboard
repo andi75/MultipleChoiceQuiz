@@ -68,15 +68,39 @@
                                     <action selector="answerClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VpQ-gk-zgD"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ihr Gewinn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Pq-4v-YBp">
+                                <rect key="frame" x="259" y="519" width="82" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sicherer Gewinn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="alg-fz-aiq">
+                                <rect key="frame" x="237.5" y="548" width="125.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restzeit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lvb-dS-uS2">
+                                <rect key="frame" x="269.5" y="389" width="61.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="4Pq-4v-YBp" firstAttribute="top" secondItem="lvb-dS-uS2" secondAttribute="bottom" constant="109.5" id="0bK-LR-M3l"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="4Pq-4v-YBp" secondAttribute="bottom" constant="60" id="2nT-6q-ZKO"/>
                             <constraint firstItem="Cu0-O4-tim" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="centerXWithinMargins" constant="-150" id="6jW-Yl-m6M"/>
                             <constraint firstItem="iNG-nK-B4B" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8c0-oK-n7p"/>
+                            <constraint firstItem="alg-fz-aiq" firstAttribute="top" secondItem="4Pq-4v-YBp" secondAttribute="bottom" constant="8" id="BJT-fr-olZ"/>
+                            <constraint firstItem="lvb-dS-uS2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DK1-4u-Gvo"/>
                             <constraint firstItem="iNG-nK-B4B" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="L1E-wW-nQQ"/>
                             <constraint firstAttribute="centerXWithinMargins" secondItem="jtk-0G-K75" secondAttribute="trailing" constant="-150" id="XYN-uz-I3J"/>
                             <constraint firstItem="VRp-Oj-DoB" firstAttribute="leading" secondItem="Cu0-O4-tim" secondAttribute="leading" id="Zst-q2-yab"/>
                             <constraint firstItem="jtk-0G-K75" firstAttribute="baseline" secondItem="Cu0-O4-tim" secondAttribute="baseline" id="bIx-4J-DFl"/>
+                            <constraint firstItem="4Pq-4v-YBp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dBw-zp-4Ur"/>
+                            <constraint firstItem="alg-fz-aiq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fwg-Rt-kw9"/>
                             <constraint firstItem="IS2-hJ-QoE" firstAttribute="top" secondItem="VRp-Oj-DoB" secondAttribute="top" id="gDz-nW-cxG"/>
                             <constraint firstItem="IS2-hJ-QoE" firstAttribute="trailing" secondItem="jtk-0G-K75" secondAttribute="trailing" id="gea-DQ-tdN"/>
                             <constraint firstItem="Cu0-O4-tim" firstAttribute="top" secondItem="iNG-nK-B4B" secondAttribute="bottom" constant="100" id="sTB-bi-Dho"/>
@@ -88,49 +112,21 @@
                         <outlet property="answerButton2" destination="jtk-0G-K75" id="OBh-P4-pkj"/>
                         <outlet property="answerButton3" destination="VRp-Oj-DoB" id="9WX-wc-ES4"/>
                         <outlet property="answerButton4" destination="IS2-hJ-QoE" id="FYC-fd-oWf"/>
+                        <outlet property="gewinnLabel" destination="4Pq-4v-YBp" id="13C-dG-YMQ"/>
                         <outlet property="questionLabel" destination="iNG-nK-B4B" id="pXm-oJ-QaU"/>
-                        <segue destination="8nC-xy-fea" kind="show" identifier="YouWinSegue" id="vC8-Mb-mLb"/>
-                        <segue destination="ohj-f5-kSz" kind="show" identifier="YouLoseSegue" id="RHR-43-I4I"/>
+                        <outlet property="restzeitLabel" destination="lvb-dS-uS2" id="zGG-Hi-5Jw"/>
+                        <outlet property="safeWinLabel" destination="alg-fz-aiq" id="tUv-li-2j7"/>
+                        <segue destination="8nC-xy-fea" kind="show" identifier="YouWinLoseSegue" id="vC8-Mb-mLb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="107" y="-12"/>
+            <point key="canvasLocation" x="107" y="-14"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="CYA-1k-h5n">
-            <objects>
-                <viewController id="ohj-f5-kSz" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="gu4-0y-6CX"/>
-                        <viewControllerLayoutGuide type="bottom" id="Yj8-N0-UlQ"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="MSK-Ht-xW4">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You Lose!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9vP-gY-MGo">
-                                <rect key="frame" x="231.5" y="281" width="137.5" height="38.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="9vP-gY-MGo" firstAttribute="centerX" secondItem="MSK-Ht-xW4" secondAttribute="centerX" id="0Bl-m3-2lq"/>
-                            <constraint firstItem="9vP-gY-MGo" firstAttribute="centerY" secondItem="MSK-Ht-xW4" secondAttribute="centerY" id="SMd-Ww-K55"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fal-3H-3nJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="277" y="736"/>
-        </scene>
-        <!--View Controller-->
+        <!--Win Lose View Controller-->
         <scene sceneID="TUW-iM-C6F">
             <objects>
-                <viewController id="8nC-xy-fea" sceneMemberID="viewController">
+                <viewController id="8nC-xy-fea" customClass="WinLoseViewController" customModule="MultipleChoiceQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZCi-dI-5YQ"/>
                         <viewControllerLayoutGuide type="bottom" id="pLM-QY-dBt"/>
@@ -139,23 +135,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="You Win!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D3s-LA-jHd">
-                                <rect key="frame" x="179" y="249" width="243" height="101"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="winOrLoss" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D3s-LA-jHd">
+                                <rect key="frame" x="226" y="280.5" width="149.5" height="38.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ssz-f9-m6S">
+                                <rect key="frame" x="278.5" y="359" width="44.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I93-hB-rbc">
+                                <rect key="frame" x="263" y="415.5" width="75" height="30"/>
+                                <state key="normal" title="New Game"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="bJ5-kz-7BF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="D3s-LA-jHd" firstAttribute="centerX" secondItem="4nD-ZN-sth" secondAttribute="centerX" id="D8a-kw-VPS"/>
+                            <constraint firstItem="I93-hB-rbc" firstAttribute="centerX" secondItem="4nD-ZN-sth" secondAttribute="centerX" id="MO1-kh-80u"/>
                             <constraint firstItem="D3s-LA-jHd" firstAttribute="centerY" secondItem="4nD-ZN-sth" secondAttribute="centerY" id="Ni7-kR-XNE"/>
+                            <constraint firstItem="Ssz-f9-m6S" firstAttribute="centerX" secondItem="4nD-ZN-sth" secondAttribute="centerX" id="Z4Z-t9-s40"/>
+                            <constraint firstItem="Ssz-f9-m6S" firstAttribute="top" secondItem="D3s-LA-jHd" secondAttribute="bottom" constant="40" id="ZXd-rk-s9d"/>
+                            <constraint firstItem="I93-hB-rbc" firstAttribute="top" secondItem="Ssz-f9-m6S" secondAttribute="bottom" constant="36" id="aPx-Hr-8t3"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="scoreLabel" destination="Ssz-f9-m6S" id="dpg-BG-tu8"/>
+                        <outlet property="winLoseLabel" destination="D3s-LA-jHd" id="vDj-Pc-XI4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qug-6Y-r23" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="872" y="54"/>
+            <point key="canvasLocation" x="839" y="-26"/>
         </scene>
     </scenes>
 </document>
