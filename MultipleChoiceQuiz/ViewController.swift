@@ -31,6 +31,7 @@ class ViewController: UIViewController {
             if(currentQuestion == questions.count)
             {
                 print("you win")
+                performSegueWithIdentifier("YouWinSegue", sender: nil)
             }
             else
             {
@@ -41,7 +42,7 @@ class ViewController: UIViewController {
         else
         {
             print("falsch")
-            
+            performSegueWithIdentifier("YouLoseSegue", sender: nil)
         }
     }
     

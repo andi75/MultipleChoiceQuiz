@@ -89,11 +89,73 @@
                         <outlet property="answerButton3" destination="VRp-Oj-DoB" id="9WX-wc-ES4"/>
                         <outlet property="answerButton4" destination="IS2-hJ-QoE" id="FYC-fd-oWf"/>
                         <outlet property="questionLabel" destination="iNG-nK-B4B" id="pXm-oJ-QaU"/>
+                        <segue destination="8nC-xy-fea" kind="show" identifier="YouWinSegue" id="vC8-Mb-mLb"/>
+                        <segue destination="ohj-f5-kSz" kind="show" identifier="YouLoseSegue" id="RHR-43-I4I"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="305" y="360"/>
+            <point key="canvasLocation" x="107" y="-12"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="CYA-1k-h5n">
+            <objects>
+                <viewController id="ohj-f5-kSz" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gu4-0y-6CX"/>
+                        <viewControllerLayoutGuide type="bottom" id="Yj8-N0-UlQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MSK-Ht-xW4">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You Lose!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9vP-gY-MGo">
+                                <rect key="frame" x="231.5" y="281" width="137.5" height="38.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9vP-gY-MGo" firstAttribute="centerX" secondItem="MSK-Ht-xW4" secondAttribute="centerX" id="0Bl-m3-2lq"/>
+                            <constraint firstItem="9vP-gY-MGo" firstAttribute="centerY" secondItem="MSK-Ht-xW4" secondAttribute="centerY" id="SMd-Ww-K55"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fal-3H-3nJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="277" y="736"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="TUW-iM-C6F">
+            <objects>
+                <viewController id="8nC-xy-fea" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZCi-dI-5YQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="pLM-QY-dBt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4nD-ZN-sth">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="You Win!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D3s-LA-jHd">
+                                <rect key="frame" x="179" y="249" width="243" height="101"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="D3s-LA-jHd" firstAttribute="centerX" secondItem="4nD-ZN-sth" secondAttribute="centerX" id="D8a-kw-VPS"/>
+                            <constraint firstItem="D3s-LA-jHd" firstAttribute="centerY" secondItem="4nD-ZN-sth" secondAttribute="centerY" id="Ni7-kR-XNE"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qug-6Y-r23" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="872" y="54"/>
         </scene>
     </scenes>
 </document>
