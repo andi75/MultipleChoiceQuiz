@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     var correctAnswerButton : UIButton? = nil
     
     var questions = [QuizQuestion]()
-    var currentQuestion = 14
+    var currentQuestion = 0
     var gewinn = [
         50, 100, 200, 300, 500,
         1000, 2000, 4000, 8000, 16000,
