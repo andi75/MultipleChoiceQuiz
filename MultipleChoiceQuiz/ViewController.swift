@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     var correctAnswerButton : UIButton? = nil
     
     var questions = [QuizQuestion]()
-    var currentQuestion = 0
+    var currentQuestion = 14
     var gewinn = [
         50, 100, 200, 300, 500,
         1000, 2000, 4000, 8000, 16000,
@@ -44,6 +44,7 @@ class ViewController: UIViewController {
     
     @IBAction func answerClicked(sender: UIButton) {
         timer?.invalidate()
+        timer = nil
         
         if(sender == correctAnswerButton)
         {
@@ -131,7 +132,7 @@ class ViewController: UIViewController {
         }
         safeWinLabel.text = "Sicherer Gewinn: \(currentSafeWin)"
         
-        restZeit = 10
+        restZeit = 60
         restzeitLabel.text = "\(restZeit)"
         
         timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("countdown"), userInfo: nil, repeats: true)
@@ -139,8 +140,11 @@ class ViewController: UIViewController {
     
     func countdown()
     {
-        restZeit--
+        restZeit = restZeit - 1
+//        restZeit--
+        
         print(restZeit)
+        
         if(restZeit == 0)
         {
             timer?.invalidate()
@@ -160,69 +164,86 @@ class ViewController: UIViewController {
 
         questions = [
             QuizQuestion(
-                question: "What is 1 + 1",
-                correctAnswer : "2",
-                wrongAnswers: ["3", "4", "5"]
+                question: "Wenn das Wetter gut ist, wird der Bauer bestimmt den Eber, das Ferkel und...?",
+                correctAnswer : "...die Sau rauslassen",
+                wrongAnswers: ["...einen draufmachen", "...die Nacht durchzechen", "...auf die Kacke hauen"]
             ),
             QuizQuestion(
-                question: "What is 1 + 1",
-                correctAnswer : "2",
-                wrongAnswers: ["3", "4", "5"]
-            ),            QuizQuestion(
-                question: "What is 1 + 1",
-                correctAnswer : "2",
-                wrongAnswers: ["3", "4", "5"]
-            ),            QuizQuestion(
-                question: "What is 1 + 1",
-                correctAnswer : "2",
-                wrongAnswers: ["3", "4", "5"]
-            ),            QuizQuestion(
-                question: "What is 1 + 1",
-                correctAnswer : "2",
-                wrongAnswers: ["3", "4", "5"]
-            ),            QuizQuestion(
-                question: "What is 1 + 1",
-                correctAnswer : "2",
-                wrongAnswers: ["3", "4", "5"]
-            ),            QuizQuestion(
-                question: "What is 1 + 1",
-                correctAnswer : "2",
-                wrongAnswers: ["3", "4", "5"]
-            ),            QuizQuestion(
-                question: "What is 1 + 1",
-                correctAnswer : "2",
-                wrongAnswers: ["3", "4", "5"]
-            ),            QuizQuestion(
-                question: "What is 1 + 1",
-                correctAnswer : "2",
-                wrongAnswers: ["3", "4", "5"]
-            ),            QuizQuestion(
-                question: "What is 1 + 1",
-                correctAnswer : "2",
-                wrongAnswers: ["3", "4", "5"]
-            ),            QuizQuestion(
-                question: "What is 1 + 1",
-                correctAnswer : "2",
-                wrongAnswers: ["3", "4", "5"]
-            ),            QuizQuestion(
-                question: "What is 1 + 1",
-                correctAnswer : "2",
-                wrongAnswers: ["3", "4", "5"]
-            ),            QuizQuestion(
-                question: "What is 1 + 1",
-                correctAnswer : "2",
-                wrongAnswers: ["3", "4", "5"]
-            ),            QuizQuestion(
-                question: "What is 1 + 1",
-                correctAnswer : "2",
-                wrongAnswers: ["3", "4", "5"]
-            ),            QuizQuestion(
-                question: "Was ist der Schmelzpunkt von Wasser",
-                correctAnswer: "273.4 Grad Kelvin",
-                wrongAnswers: ["373.4 Grad Kelvin", "0 Grad Fahrenheit", "100 Grad Celsius"]
+                question: "Was ist meist ziemlich viel?",
+                correctAnswer : "stolze Summe",
+                wrongAnswers: ["selbstbewusste Differenz", "arroganter Quotient", "hochmütiges Produkt"]
+            ),
+            QuizQuestion(
+                question: "Wessen Genesung schnell voranschreitet, der erholt sich...?",
+                correctAnswer : "...zusehends",
+                wrongAnswers: ["...hinguckends", "...anschauends", "...glotzends"]
+            ),
+            QuizQuestion(
+                question: "Natürlich spielten musikalische Menschen auch im...?",
+                correctAnswer : "...Ostblock Flöte",
+                wrongAnswers: ["...Südpo Saune", "...Nordklari Nette", "..Westsaxo Fon"]
+            ),
+            QuizQuestion(
+                question: "Wobei gibt es keine geregelten Öffnungszeiten?",
+                correctAnswer : "Fensterläden",
+                wrongAnswers: ["Möbelhäuser", "Teppichgeschäfte", "Baumärkte"]
+            ),
+            QuizQuestion(
+                question: "Was war bereits seit Mai 1969 ein beliebtes Zahlungsmittel im europäischen Raum?",
+                correctAnswer : "Eurocheques",
+                wrongAnswers: ["Euronoten", "Euroscheine", "Euromünzen"]
+            ),
+            QuizQuestion(
+                question: "Malu Dreyer profitierte Anfang des Jahres von...?",
+                correctAnswer : "...Becks Rücktritt",
+                wrongAnswers: ["...Oettingers Sattelstange", "...Veltins Fahrradkette", "..Diebels Vorderreifen"]
+            ),
+            QuizQuestion(
+                question: "Woraus besteht in der Regel eine Entourage?",
+                correctAnswer : "Freunde & Bekannte",
+                wrongAnswers: ["Baguette & Rotwein", "Mascara & Lidschatten", "Sofa & Sessel"]
+            ),
+            QuizQuestion(
+                question: "Was haben die Hollywood-Stars Gosling, Reynolds und Phillippe gemeinsam?",
+                correctAnswer : "Vorname Ryan",
+                wrongAnswers: ["Ex-Frau Megan Fox", "Geburtsjahr 1978", "irische Staatsbürgerschaft"]
+            ),
+            
+            QuizQuestion(
+                question: "Welche beiden Staaten einigten sich Ende 2012 über die Festsetzung eines Grenzverlaufs?",
+                correctAnswer : "Dänemark & Kanada",
+                wrongAnswers: ["Deutschland & Australien", "Polen & Südafrika", "Österreich & Japan"]
+            ),
+
+            
+            QuizQuestion(
+                question: "Seine drei Weltmeister-Titel erfuhr sich Sebastian Vettel mit Motoren von...?",
+                correctAnswer : "Renault",
+                wrongAnswers: ["Ferrari", "Mercedes", "Toyota"]
+            ),
+            
+            QuizQuestion(
+                question: "Welcher General vertrieb im 19. Jahrhundert die Mexikaner aus dem heutigen US-Bundesstaat Texas?",
+                correctAnswer : "Sam Houston",
+                wrongAnswers: ["John Denver", "Michael Miami", "Phil A. Delphia"]
+            ),
+            QuizQuestion(
+                question: "Der Text welches dieser berühmten Songs ist ganz offensichtlich an eine Prostituierte gerichtet?",
+                correctAnswer : "\"Roxanne\" von The Police",
+                wrongAnswers: ["\"Angie\" von den Stones", "Manilows \"Mandy\"", "Jacksons \"Billie Jean\""]
+            ),
+            QuizQuestion(
+                question: "Was soll in bestimmten Abständen nach der sogenannten ABCDE-Regel kontrolliert werden?",
+                correctAnswer : "Leberflecken auf der Haut",
+                wrongAnswers: ["Komposthaufen im Garten", "Luftdruck der Autoreifen", "Aktienfonds bei der Bank"]
+            ),
+            QuizQuestion(
+                question: "Wer sollte sich mit der \"Zwanzig nach vier\"-Stellung auskennen?",
+                correctAnswer: "Kellner",
+                wrongAnswers: ["Fahrlehrer", "Karatemeister", "Landschafts-Architekt"]
             )
         ]
-        showQuestion(questions[0])
+        showQuestion(questions[currentQuestion])
     }
 }
 
